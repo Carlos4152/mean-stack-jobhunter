@@ -1,0 +1,134 @@
+<nav class="navbar navbar-expand-lg d-none d-lg-block">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/dashboard">
+      <img src="assets/images/logo.png" alt="" width="60px">
+    </a>
+    <div class="navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mx-2 mb-lg-0 d-flex gap-4">
+        <li class="nav-item d-flex align-items-center text-white px-3 rounded-3" routerLinkActive="active">
+          <i class="bi bi-grid-fill"></i>
+          <a class="nav-link fw-semibold text-white" routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item d-flex align-items-center text-white px-3 rounded-3" routerLinkActive="active">
+          <i class="bi bi-stack"></i>
+          <a class="nav-link fw-semibold text-white" routerLink="/platforms">Platforms</a>
+        </li>
+        <li class="nav-item d-flex align-items-center text-white px-3 rounded-3" routerLinkActive="active">
+          <i class="bi bi-bar-chart-fill"></i>
+          <a class="nav-link fw-semibold text-white" routerLink="/applications">Applications</a>
+        </li>
+        <li class="nav-item d-flex align-items-center text-white px-3 rounded-3" routerLinkActive="active">
+          <i class="bi bi-folder-fill"></i>
+          <a class="nav-link fw-semibold text-white" routerLink="/resource">Resources</a>
+        </li>
+        <li class="nav-item d-flex align-items-center text-white px-3 rounded-3" routerLinkActive="active">
+          <i class="bi bi-gear-fill"></i>
+          <a class="nav-link fw-semibold text-white" style="cursor: pointer;">Settings</a>
+        </li>
+      </ul>
+      <div class="dropdown">
+        <div class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="user__container d-flex align-items-center justify-content-center ">
+            <div class="photo rounded d-flex align-items-center justify-content-center ">
+              <h1 class="fw-bold">{{ fullName[0] | titlecase}}</h1>
+            </div>
+            <div class="user_content ps-2">
+              <p class="m-0 fw-semibold text-white">{{fullName | titlecase}}</p>
+              <p class="text-white m-0">Admin</p>
+            </div>
+          </div>
+        </div>
+        <ul class="dropdown-menu mt-3">
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="#">
+              <i class="bi bi-person-fill fs-5"></i>
+              <p class="text-secondary fw-semibold m-0 ps-3">Profile</p>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center" style="cursor: pointer;" (click)="logOut()">
+              <i class="bi bi-box-arrow-right ps-1"></i>
+              <p class="text-secondary fw-semibold m-0 ps-3">Log out</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!---- RESPONSIVE NAVBAR  -->
+<nav class="navbar navbar-expand-lg d-lg-none position-fixed top-0 z-3 start-0 end-0 overflow-hidden">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/logo.png" alt="" width="60px">
+    </a>
+    <div (click)="toggleMenu()">
+      <i class="bi bi-list text-white fs-1 res__menu"></i>
+    </div>
+  </div>
+
+  <div class="side-bar" [ngClass]="{'show': toggle === true, 'hide': toggle === false}">
+    <div class="offcanvas-body pt-4 px-3">
+      <div class="user__container d-flex">
+        <div class="photo rounded d-flex align-items-center justify-content-center ">
+          <h1 class="fw-bold">{{ fullName[0] | titlecase}}</h1>
+        </div>
+        <div class="user_content ps-2">
+          <p class="m-0 fw-semibold text-white">{{fullName | titlecase}}</p>
+          <p class="text-white m-0">Admin</p>
+        </div>
+      </div>
+
+      <section class="pt-4 row m-0 gap-2">
+        <div routerLinkActive="active" class="col p-0" routerLink="/dashboard" (click)="toggleMenu()">
+          <div class="d-flex align-items-center flex-column text-white border p-3 rounded-3" >
+            <i class="bi bi-grid-fill fs-3"></i>
+            <a class="nav-link fw-semibold text-white">Dashboard</a>
+          </div>
+        </div>
+
+        <div class="col p-0" routerLinkActive="active" routerLink="/platforms" (click)="toggleMenu()">
+          <div class="d-flex align-items-center flex-column text-white border p-3 rounded-3" >
+            <i class="bi bi-stack fs-3"></i>
+            <a class="nav-link fw-semibold text-white">Platforms</a>
+          </div>
+        </div>
+
+        <div class="col p-0" routerLinkActive="active" routerLink="/applications" (click)="toggleMenu()">
+          <div class="d-flex align-items-center flex-column text-white border p-3 rounded-3" >
+            <i class="bi bi-bar-chart-fill fs-3"></i>
+            <a class="nav-link fw-semibold text-white">Applications</a>
+          </div>
+        </div>
+
+        <div class="col p-0 " routerLinkActive="active" routerLink="/resource" (click)="toggleMenu()">
+          <div class="d-flex align-items-center flex-column text-white border p-3 rounded-3" >
+            <i class="bi bi-folder-fill fs-3"></i>
+            <a class="nav-link fw-semibold text-white">Resources</a>
+          </div>
+        </div>
+
+        <div class="col p-0" routerLinkActive="active">
+          <div class="d-flex align-items-center flex-column text-white border p-3 rounded-3">
+            <i class="bi bi-gear-fill fs-3"></i>
+            <a class="nav-link fw-semibold text-white">Settings</a>
+          </div>
+        </div>
+
+        <div class="col p-0">
+          <div class="d-flex align-items-center flex-column text-white border p-3 rounded-3">
+            <i class="bi bi-person-fill fs-3"></i>
+            <a class="nav-link fw-semibold text-white">Profile</a>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center text-white col-12 gap-3 p-3">
+          <i class="bi bi-box-arrow-right ps-1 fs-3"></i>
+          <a class="nav-link fw-semibold text-white" (click)="logOut()">Log out</a>
+        </div>
+
+      </section>
+    </div>
+  </div>
+</nav>

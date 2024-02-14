@@ -1,0 +1,33 @@
+.platforms__content h2, .subtitle {
+    max-width: 240px;
+    -webkit-box-shadow: 1px 3px 14px -2px #000000; 
+    box-shadow: 1px 3px 14px -2px #000000;
+}
+
+.icones__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.icon  {
+    width: 140px;
+    height: 133px;
+    background: #f5f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.icon:hover {
+    border: 3px solid var(--primary);
+}
+
+.icon img {
+    width: 100px;
+}
+
+

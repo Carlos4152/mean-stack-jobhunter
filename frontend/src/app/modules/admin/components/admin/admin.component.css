@@ -1,0 +1,33 @@
+.side-bar {
+    background: var(--secondary);
+}
+
+.main__container {
+    height: 100vh;
+}
+
+.menu__icon i {
+    cursor: pointer;
+    background: var(--secondary);
+}
+
+.active {
+    position: fixed;
+    left: -1px;
+    width: 230px;
+    height: 100%;
+    z-index: 1;
+    background-color: var(--secondary);
+    transition: all 0.3s ease-in-out;
+}
+
+.no-active {
+    position: fixed;
+    left: -225px;
+    width: 230px;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    background-color: var(--secondary);
+    transition: all 0.3s ease-in-out;
+}

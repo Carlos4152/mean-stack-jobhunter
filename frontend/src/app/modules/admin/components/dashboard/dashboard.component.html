@@ -1,0 +1,175 @@
+<div class="dashboard__container py-5 mt-5 mt-lg-0">
+    <div class="container px-3">
+       <section class="row m-0">
+         <!--  USER GREETING -->
+        <div class="col-sm-8 p-0 pe-md-3">
+            <div class="greeting__box h-100 rounded-3 row m-0 align-items-center px-lg-4 ">
+                    <div class="greeting__content text-white col-sm-6 order-1 px-3 pb-4 text-center text-md-start">
+                        <h1 class="fw-bold">Hi {{ firstName | titlecase}}</h1>
+                        <p class="fw-semibold m-0 ">Welcome back!</p>
+                        <p class="fw-semibold m-0 ">It's time to start the day</p>
+                    </div>
+                    <div class="greet__img col-sm-6 text-center order-md-2">
+                        <img src="assets/images/greeting-img.png" alt="" class="img-fluid">
+                    </div>
+            </div>
+        </div>
+        <!--  USER  DETAILS   -->
+        <div class="col-sm-4 p-0 px-1">
+            <div class="user__detail rounded-3 justify-content-center align-items-center mt-3 mt-md-0 h-100 ">
+                <div class="user col-sm-6  col-md-12 order-1 order-md-2 position-relative d-flex justify-content-center align-items-center">
+                    <div class="user_initial text-center d-flex justify-content-center align-items-center position-absolute ">
+                        <h3 class="fw-bold pt-2 text-white">{{ userInitial}}</h3>
+                    </div>
+                </div>
+
+                <div class="user__contact pt-4 row m-0 pt-lg-2 mt-lg-4 px-lg-4 py-lg-3 px-md-3">
+                    <div class="d-flex gap-3 align-items-center col-sm-6 col-md-12  p-md-0  mt-lg-0 ">
+                        <i class="bi bi-person-bounding-box p-primary fs-4"></i>
+                        <p class="m-0 p-third overmode fs-6 fw-semibold">{{ userName | titlecase }}</p>
+                    </div>
+                    <div class="d-flex gap-3 align-items-center col-sm-6 col-md-12 p-md-0  mt-lg-0 ">
+                        <i class="bi bi-envelope-at-fill p-primary fs-4"></i>
+                        <p class="m-0 p-third overmode fs-6 fw-semibold">{{ userEmail }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </section>
+       <!-- APPLICATIONS TRACKER [ COUNTERS ]   -->
+       <section class="row m-0 pt-5 pt-lg-3 pb-3 ">
+          <div id="carouselExampleIndicators" class="carousel slide d-md-none">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active p-3 mb-4">
+                <div class="col-sm-3 p-0 ">
+                    <div class="back-application text-white text-center py-5 rounded-3 logo">
+                        <h1><i class="bi bi-arrow-up-right-square-fill"></i></h1>
+                        <h2 class="fw-bold pt-3">{{ totalApp.length }}</h2>
+                        <p class="fw-bold m-0">APPLICATIONS</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="carousel-item p-3 mb-4">
+                <div class="col-sm-3 p-0 ">
+                    <div class="back-application text-white text-center py-5 rounded-3 back-active logo">
+                        <h1><i class="bi bi-star-fill"></i></h1>
+                        <h2 class="fw-bold pt-3">{{ activeCount }}</h2>
+                        <p class="fw-bold m-0">ACTIVE</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="carousel-item p-3 mb-4">
+                <div class="col-sm-3 p-0 ">
+                    <div class="back-closed text-white text-center py-5 rounded-3 logo">
+                        <h1><i class="bi bi-x-square-fill" style="width: 60px;"></i></h1>
+                        <h2 class="fw-bold pt-3">{{ closedCount }}</h2>
+                        <p class="fw-bold m-0">CLOSED</p>
+                    </div>
+                </div>
+              </div>
+
+              <div class="carousel-item p-3 mb-4">
+                <div class="col-sm-3 p-0 ">
+                    <div class="back-pending text-white text-center py-5 rounded-3 logo">
+                        <h1><i class="bi bi-arrow-clockwise" ></i></h1>
+                        <h2 class="fw-bold pt-3">{{ pendingCount }}</h2>
+                        <p class="fw-bold m-0">PENDING</p>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- APPLICATIONS TRACKER DESK MODE   -->
+          <div class="row m-0 d-none d-md-flex p-0">
+            <div class="col-sm-3 p-0 p-md-2">
+                <div class="back-application text-white text-center py-5 rounded-3 logo count_box">
+                    <h1><i class="bi bi-arrow-up-right-square-fill"></i></h1>
+                    <h2 class="fw-bold pt-3">{{ totalApp.length}}</h2>
+                    <p class="fw-bold m-0">APPLICATIONS</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 p-0 p-md-2">
+                <div class="text-white text-center py-5 rounded-3 back-active logo count_box">
+                    <h1><i class="bi bi-star-fill"></i></h1>
+                    <h2 class="fw-bold pt-3">{{ activeCount }}</h2>
+                    <p class="fw-bold m-0">ACTIVE</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 p-0 p-md-2">
+                <div class="back-closed text-white text-center py-5 rounded-3 logo count_box">
+                    <h1><i class="bi bi-x-square-fill" style="width: 60px;"></i></h1>
+                    <h2 class="fw-bold pt-3">{{ closedCount }}</h2>
+                    <p class="fw-bold m-0">CLOSED</p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 p-0 p-md-2">
+                <div class="back-pending text-white text-center py-5 rounded-3 logo count_box">
+                    <h1><i class="bi bi-arrow-clockwise" ></i></h1>
+                    <h2 class="fw-bold pt-3">{{ pendingCount }}</h2>
+                    <p class="fw-bold m-0">PENDING</p>
+                </div>
+            </div>
+          </div>
+       </section>
+        <!--  OTHER SECCTION  -->
+        <section class="row m-0">
+            <div class="col-sm-6 p-0 col-md-6 pe-md-2">
+                <div class="social__media row m-0 p-3 rounded-3 align-items-center h-100">
+                    <div class="col-sm-6 col-md-12 col-xl-6">
+                        <h2 class="fw-bold">Social Media</h2>
+                        <p class="m-0 p-third lh-xl-lg">
+                            Remember that it is important to build connection, we always need help to accomplish our goals.
+                        </p>
+                    </div>
+                    <div class="col-sm-6 pt-3 col-md-12 col-xl-6">
+                        <div class="row m-0 gap-2 px-xl-4">
+                            <div class="media col-5 text-center rounded-3 back-active text-white p-3 p-xl-2">
+                                <i class="bi bi-facebook"></i>
+                            </div>
+                            <div class="media col-5 text-center rounded-3 back-active text-white p-3 p-xl-2">
+                                <i class="bi bi-linkedin"></i>
+                            </div>
+                        </div>
+
+                        <div class="row m-0  gap-2 mt-2 px-xl-4">
+                            <div class="media border col-5 text-center rounded-3 back-active text-white p-3 p-xl-2">
+                                <i class="bi bi-instagram"></i>
+                            </div>
+                            <div class="media border col-5 text-center rounded-3 back-active text-white p-3 p-xl-2">
+                                <i class="bi bi-twitter"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 p-0 mt-3 mt-md-0 col-md-6">
+                <div class="support__customer row m-0 back-active p-3 rounded-3 logo justify-content-center align-items-center px-xl-5">
+                    <div class="col-sm-6 text-white col-md-12 col-lg-12 col-xl-6">
+                        <h3 class="fw-bold">You need help?</h3>
+                        <p class="pt-3 pt-md-0">
+                            Contact us at any time <br>
+                            will be more than <span class="fw-bold">happy <br> to help!</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-md-12 text-end col-lg-12 col-xl-6">
+                        <img src="assets/images/support.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

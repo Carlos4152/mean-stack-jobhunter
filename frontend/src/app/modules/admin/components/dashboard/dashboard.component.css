@@ -1,0 +1,87 @@
+
+.greeting__box {
+    background-color: var(--primary);
+    -webkit-box-shadow: 1px 3px 14px -2px #000000; 
+    box-shadow: 1px 3px 14px -2px #000000;
+}
+
+.user {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 140px;
+    border-top-right-radius: 11px;
+    border-top-left-radius: 11px;
+    border-bottom: 3px solid #089883;
+}
+
+.user_initial {
+    background-color: #000000;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    top: 70%;
+    border: 3px solid #089883;
+}
+
+.user__detail {
+    -webkit-box-shadow: 1px 3px 14px -2px #000000; 
+    box-shadow: 1px 3px 14px -2px #000000;
+}
+.overmode {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.overmode:hover {
+    color: var(--primary);
+}
+
+/*
+    APPLICATIONS TRACKER [ COUNTERS ]
+*/
+
+
+
+
+
+
+.logo {
+    -webkit-box-shadow: 1px 3px 14px -2px #000000; 
+    box-shadow: 1px 3px 14px -2px #000000;
+}
+
+.logo i, h2 {
+    font-size: 45px;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--primary)
+}
+
+.social__media {
+    -webkit-box-shadow: 1px 3px 14px -2px #000000; 
+    box-shadow: 1px 3px 14px -2px #000000;
+}
+
+.social__media i {
+font-size: 30px;
+}
+
+@media (min-width: 760px){
+    .support__customer img{
+        width: 185px;
+    }
+}
+
+@media (min-width: 1000px){
+    .support__customer img{
+        width: 160px
+    }
+}
+
+@media (min-width: 1300px){
+    .support__customer img{
+        width: 230px
+    }
+}

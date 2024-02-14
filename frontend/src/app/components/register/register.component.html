@@ -1,0 +1,85 @@
+<div class="application__management__bar py-3 text-center">
+    <img src="assets/images/logo.png" alt="" width="70px">
+</div>
+
+<div class="container mt-5 py-5">
+<div class="login__container row m-0 border rounded-4 p-xl-4 py-4 p-md-5 align-items-center p-xl-5 border">
+    <!--- REGISTRATION FORM -->
+    <div class="col-sm-5 d-flex flex-column pt-5 col-md-12  col-lg-5 px-md-5 px-lg-0 order-2">
+        <div class="login_form">
+            <div class="login-content text-center text-lg-start">
+                <h2 class="p-primary fw-bold">REGISTRATION</h2>
+            </div>
+            <form class="row m-0 pt-md-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="inputs col-sm-6 p-0 pe-2">
+                    <p class="m-0 fw-bold">First Name <span class="p-primary">*</span></p>
+                    <input type="text"class="form-control mt-2 py-2 w-100"formControlName="firstname">
+                    <!--VALIDATORS -->
+                    <div
+                        *ngIf="registerForm.get('firstname')?.invalid && (registerForm.get('firstname')?.dirty || registerForm.get('firstname')?.touched)">
+                        <small class="text-danger" *ngIf="registerForm.get('firstname')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                </div>
+                <div class="inputs mt-3  col-sm-6 mt-3 mt-md-0 p-0 pe-2">
+                    <p class="m-0 fw-bold">Last Name <span class="p-primary">*</span></p>
+                    <input type="text" class="form-control mt-2 py-2 w-100" formControlName="lastname">
+                    <!--VALIDATORS -->
+                    <div
+                        *ngIf="registerForm.get('lastname')?.invalid && (registerForm.get('lastname')?.dirty || registerForm.get('lastname')?.touched)">
+                        <small class="text-danger" *ngIf="registerForm.get('lastname')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                </div>
+                <div class="inputs mt-3  col-sm-12 mt-3 mt-md-3 p-0 pe-2 mt-xl-3">
+                    <p class="m-0 fw-bold">Email Address <span class="p-primary">*</span></p>
+                    <input type="text" class="form-control mt-2 py-2 w-100" formControlName="email"/>
+                    <!--VALIDATORS -->
+                    <div
+                        *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+                        <small class="text-danger" *ngIf="registerForm.get('email')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                </div>
+                <div class="inputs mt-3  col-sm-12 mt-3 mt-md-3 p-0 pe-2 mt-xl-3">
+                    <p class="m-0 fw-bold">Password <span class="p-primary">*</span></p>
+                    <input type="password" class="form-control mt-2 py-2 w-100" formControlName="password">
+                    <div class="password__rules pt-3 d-flex flex-column gap-3 ps-md-3">
+                        <div class="rule d-flex gap-3 text-secondary">
+                            <i class="bi bi-check-circle-fill" [ngClass]="{'text-success': isRequirementMet('length'), 'text-secondary': !isRequirementMet('length')}"></i>
+                            <p class="m-0">at least 8 characters</p>
+                        </div>
+                        <div class="rule d-flex gap-3 text-secondary">
+                            <i class="bi bi-check-circle-fill" [ngClass]="{'text-success': isRequirementMet('number'), 'text-secondary': !isRequirementMet('number')}"></i>
+                            <p class="m-0">at least one number</p>
+                        </div>
+                        <div class="rule d-flex gap-3 text-secondary">
+                            <i class="bi bi-check-circle-fill" [ngClass]="{'text-success': isRequirementMet('capitalLetter'), 'text-secondary': !isRequirementMet('capitalLetter')}"></i>
+                            <p class="m-0">at least one capital letter</p>
+                        </div>
+                        <div class="rule d-flex gap-3 text-secondary">
+                            <i class="bi bi-check-circle-fill" [ngClass]="{'text-success': isRequirementMet('lowercaseLetter'), 'text-secondary': !isRequirementMet('lowercaseLetter')}"></i>
+                            <p class="m-0">at least one lowercase letter characters</p>
+                        </div>
+                        <div class="rule d-flex  gap-3 text-secondary">
+                            <i class="bi bi-check-circle-fill" [ngClass]="{'text-success': isRequirementMet('specialCharacter'), 'text-secondary': !isRequirementMet('specialCharacter')}"></i>
+                            <p class="m-0">at least one special character</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="login__btn d-flex gap-3 align-items-center mt-4 p-0">
+                    <button type="submit" class="py-1 rounded-2 px-3 border-0 fw-bold back-active text-white">SIGN UP</button>
+                    <p class="m-0">or <span class="p-primary fw-semibold" routerLink="/login" style="cursor: pointer;">Log In</span></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--- IMAGE FORM  -->
+    <div class="login_img col-sm-7 text-md-center col-md-12 col-lg-6 pt-lg-4 pt-xl-0 order-lg-2 text-xl-center">
+        <img src="assets/images/register.png" alt="" class="img-fluid">
+    </div>
+</div>
+</div>

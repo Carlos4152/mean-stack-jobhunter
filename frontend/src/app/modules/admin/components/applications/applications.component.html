@@ -1,0 +1,241 @@
+<div class="container p-0 py-5 mt-5 mt-lg-0 px-3">
+  <section class="row m-0">
+    <h2 class="title text-center text-white py-2 rounded-5 fw-bold">APPLICATION</h2>
+    <!-- Search bar & Application button -->
+    <div class="row m-0 pt-5">
+      <div class="col-sm-6 search__bar p-0 order-1 mt-4 order-md-1 mt-md-0">
+        <!-- Search Bar -->
+        <div class="seacrh-container position-relative d-flex align-items-center">
+          <input type="text" name="" id="" class="rounded-2 py-2 ps-5 w-100 border-1 form-control"
+            [(ngModel)]="searchValue" (input)="searchApplication(searchValue)" placeholder="company name">
+          <i class="bi bi-search position-absolute start-0 ms-3 pt-2 fs-5 input_icon p-primary"></i>
+        </div>
+      </div>
+      <div class="col-sm-6 application__button text-start p-0 order-md-1 text-md-end">
+        <button class="py-2 fw-bold border-0 back-active text-white px-3 rounded-3" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          New Application
+        </button>
+      </div>
+
+      <!--- MODAL FORM -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header d-flex w-100 text-center justify-content-center p-primary">
+              <h1 class="modal-title fs-5 fw-bold" id="exampleModalLabel">APPLICATION FORM</h1>
+            </div>
+            <div class="modal-body">
+              <form [formGroup]="applicationForm" (ngSubmit)="onSubmit()">
+                <h5 class="text-secondary fw-bold text-center">Company Information</h5>
+                <div class="row mt-3">
+                  <div class="col-sm-6">
+                    <p class="m-0 fw-semibold">Company</p>
+                    <input type="text" name="" id="" class="form-control mt-2" placeholder="Ex: Google"
+                      formControlName="company">
+                      <div
+                        *ngIf="applicationForm.get('company')?.invalid && (applicationForm.get('company')?.dirty || applicationForm.get('company')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('company')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 pt-3 pt-md-0">
+                    <p class="m-0 fw-semibold">Company Website</p>
+                    <input type="text" name="" id="" class="form-control mt-2" placeholder="www.google.com"
+                      formControlName="website">
+                      <div
+                        *ngIf="applicationForm.get('website')?.invalid && (applicationForm.get('website')?.dirty || applicationForm.get('website')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('website')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-sm-6">
+                    <p class="m-0 fw-semibold">Position</p>
+                    <input type="text" name="" id="" class="form-control mt-2" placeholder="Angular Developer"
+                      formControlName="position">
+                      <div
+                        *ngIf="applicationForm.get('position')?.invalid && (applicationForm.get('position')?.dirty || applicationForm.get('position')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('position')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 pt-3 pt-md-0">
+                    <p class="m-0 fw-semibold">City</p>
+                    <input type="text" name="" id="" class="form-control mt-2" placeholder="Buffalo, NY"
+                      formControlName="city">
+                      <div
+                        *ngIf="applicationForm.get('city')?.invalid && (applicationForm.get('city')?.dirty || applicationForm.get('city')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('city')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                </div>
+                <h5 class="text-secondary fw-bold text-center pt-3">Job Details</h5>
+                <div class="row mt-3">
+                  <div class="col-sm-6">
+                    <p class="m-0 fw-semibold">Job Type</p>
+                    <select class="form-select mt-2" aria-label="Default select example" formControlName="remote"
+                      placeholder="Remote">
+                      <option value="remote" selected>Remote</option>
+                      <option value="hybrid">Hybrid</option>
+                      <option value="office">Office</option>
+                    </select>
+                    <div
+                        *ngIf="applicationForm.get('remote')?.invalid && (applicationForm.get('remote')?.dirty || applicationForm.get('remote')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('remote')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 pt-3 pt-md-0">
+                    <p class="m-0 fw-semibold">Salary</p>
+                    <input type="number" name="" id="" class="form-control mt-2" placeholder="55 - 60K"
+                      formControlName="salary">
+                      <div
+                        *ngIf="applicationForm.get('salary')?.invalid && (applicationForm.get('salary')?.dirty || applicationForm.get('salary')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('salary')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 mt-3">
+                    <p class="m-0 fw-semibold">Status</p>
+                    <select class="form-select mt-2" aria-label="Default select example" formControlName="status">
+                      <option value="active" selected>Active</option>
+                      <option value="closed">Closed</option>
+                      <option value="pending">Pending</option>
+                    </select>
+                    <div
+                        *ngIf="applicationForm.get('status')?.invalid && (applicationForm.get('status')?.dirty || applicationForm.get('status')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('status')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 mt-3">
+                    <p class="m-0 fw-semibold">Platform</p>
+                    <input type="text" name="" id="" class="form-control mt-2" placeholder="Linkedin"
+                      formControlName="platform">
+                      <div
+                        *ngIf="applicationForm.get('platform')?.invalid && (applicationForm.get('platform')?.dirty || applicationForm.get('platform')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('platform')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 mt-3">
+                    <p class="m-0 fw-semibold">Note</p>
+                    <textarea class="form-control" placeholder="Enter note as a reminder" id="floatingTextarea"
+                      style="resize: none;" formControlName="note"></textarea>
+                      <div
+                        *ngIf="applicationForm.get('note')?.invalid && (applicationForm.get('note')?.dirty || applicationForm.get('note')?.touched)">
+                        <small class="text-danger" *ngIf="applicationForm.get('note')?.hasError('required')">
+                            *This field is required.*
+                        </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer mt-3 d-flex justify-content-center">
+                  <button type="submit" class="btn save-btn fw-bold text-white">Save</button>
+                  <button type="button" class="btn btn-danger fw-bold" data-bs-dismiss="modal">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Application Table -->
+    <div class="row m-0 application_table rounded-3 p-2 mt-5 p-lg-3">
+      <p class="fw-semibold">Application <span>({{jobApps.length}})</span></p>
+      <div class="">
+        <div class="col-sm-12 application__container">
+          <!-- TABLE TITLE -->
+          <div class="row m-0 details-title py-2 fw-semibold rounded-3  application_summary gap-2">
+            <div class="col-2">
+              <p class="fw-bold m-0">Company</p>
+            </div>
+            <div class="col-4">
+              <p class="fw-bold m-0 text-center">Position</p>
+            </div>
+            <div class="col">
+              <p class="fw-bold m-0 text-center">City</p>
+            </div>
+            <div class="col">
+              <p class="fw-bold m-0 text-center">Salary</p>
+            </div>
+            <div class="col">
+              <p class="fw-bold m-0">Status</p>
+            </div>
+          </div>
+          <!-- TABLE DETAILS -->
+          <div class=""
+            *ngFor="let data of jobApps">
+            <section *ngIf="searchValue === '' || data.company.toLowerCase().includes(searchValue)" class="row m-0 pt-3 pb-2 fw-semibold border-bottom border-2 application_summary gap-2">
+              <div class="col-2">
+                {{data.company}}
+              </div>
+              <div class="col-4 text-center">
+                {{data.position | ellipsis:22}}
+              </div>
+              <div class="col text-center">
+                {{data.city}}
+              </div>
+              <div class="col text-center">
+                ${{data.salary}}K
+              </div>
+              <div class="col d-flex justify-content-between align-items-center">
+                <p class="m-0 px-2 rounded text-white" style="cursor: pointer;" [ngClass]="{
+                                  'back-active': data.status === 'active',
+                                  'back-closed': data.status === 'closed',
+                                  'back-pending': data.status === 'pending',
+                              }">{{data.status| titlecase}}</p>
+                <div class="btn-group dropend">
+                  <div type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-three-dots-vertical"></i>
+                  </div>
+                  <ul class="dropdown-menu ">
+                    <!-- Dropdown menu links -->
+                    <li class="d-flex gap-3 p-2">
+                      <i class="bi bi-eye-fill"></i>
+                      <p class="m-0" [routerLink]="['/applications', data._id]">View details</p>
+                    </li>
+                    <li class="d-flex gap-3 p-2">
+                      <i class="bi bi-trash3-fill"></i>
+                      <p class="m-0" (click)="data._id && removeData(data._id)">Remove</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,30 @@
+.registration_btn button {
+    background: var(--primary);
+}
+
+.application__management__bar {
+    background-color: var(--primary);
+}
+
+.login-content p {
+    color: #A7A3A3;
+}
+
+.login__container button {
+    letter-spacing: 2px;
+}
+
+.forget:hover {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+@media (min-width: 725px){
+    .login__container {
+        box-shadow: 0px 0px 8px var(--primary);
+    }
+}

@@ -1,0 +1,41 @@
+.title {
+    background-color: var(--primary);
+    max-width: 250px;
+    -webkit-box-shadow: -1px 1px 14px 3px rgba(0,0,0,0.34); 
+    box-shadow: -1px 1px 14px 3px rgba(0,0,0,0.34);
+}
+
+.resources { 
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 5px #615f5f;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.resources:hover {
+    background-color: #0B5348;
+    color: white;
+}
+
+.resources:hover a{
+    color: white;
+}
+
+.icon, .icon-responsive {
+    background-color: #0B5348;
+}
+
+.content a, .resource-responsive a {
+    color: #053E35;
+}
+
+.icon-responsive {
+    background-color: #0B5348;
+    width: 120px;
+}
+
+@media (min-width: 765px){
+    .resource-img {
+        width: 400px;
+    }
+}

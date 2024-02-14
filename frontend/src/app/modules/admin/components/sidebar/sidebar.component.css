@@ -1,0 +1,53 @@
+.navbar {
+    background-color: var(--primary);
+}
+
+.photo {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background-color: #55C9B8;
+}
+
+.photo h1 {
+    color: #008F7A;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.offcanvas {
+    width: 200px;
+}
+
+.offcanvas-body, .offcanvas-header {
+    background-color: var(--primary);
+}
+
+.res__menu {
+    cursor: pointer;
+}
+
+.active {
+    background-color: #047665;
+}
+
+/* Mobile Responsive Style*/
+
+.side-bar {
+    position: fixed;
+    top: 74px;
+    border-top: 2px solid rgb(6, 94, 50);
+    width: 100%;
+}
+
+.hide {
+    right: 1000px;
+    transition: right 0.5s ease-in-out;
+}
+
+.show {
+    right: 0;
+    transition: right 0.5s ease-in-out;
+}

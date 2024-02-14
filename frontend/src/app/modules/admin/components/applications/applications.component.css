@@ -1,0 +1,82 @@
+
+.title {
+    background-color: var(--primary);
+    max-width: 250px;
+    -webkit-box-shadow: -1px 1px 14px 3px rgba(0,0,0,0.34); 
+    box-shadow: -1px 1px 14px 3px rgba(0,0,0,0.34);
+}
+
+.application_table {
+    background-color: #FEFEFE;
+    -webkit-box-shadow: -1px 1px 14px 3px rgba(0,0,0,0.34); 
+    box-shadow: -1px 1px 14px 3px rgba(0,0,0,0.34);
+}
+
+.details-title {
+    background-color: #EEEEEE;
+}
+
+.details-title .col {
+    color: #333131;
+}
+
+.status {
+    background-color: #D98420;
+    cursor: pointer;
+}
+
+.dropdown-menu li {
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+background-color: #EEEEEE;
+}
+
+.input_icon {
+    padding-bottom: 6px;
+}
+
+
+
+.search-img img{
+    border: 1px solid red;
+}
+
+.application__button button{
+    -webkit-box-shadow: -1px 1px 14px 3px rgba(0,0,0,0.34); 
+    box-shadow: -1px 1px 14px 3px rgba(0,0,0,0.34);
+}
+
+.save-btn {
+    background-color: var(--primary);
+}
+
+.application__container {
+    overflow-x: scroll;
+}
+
+.application_summary {
+    width: 1200px;
+}
+
+@media (min-width: 1030px) {
+    .application_summary {
+        width: 100%;
+        
+    }
+
+    .application__container {
+        overflow-x:unset;
+    }
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0px 0px 5px var(--primary);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
