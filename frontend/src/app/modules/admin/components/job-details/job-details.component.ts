@@ -67,7 +67,6 @@ export class JobDetailsComponent {
     this.activatedRoute.params.subscribe(params => {
       const appId = params['appId']
       this.applicationId = appId;
-
       const app = this.applicationService.getById(appId).subscribe(
         response => {
           this.application = [response];

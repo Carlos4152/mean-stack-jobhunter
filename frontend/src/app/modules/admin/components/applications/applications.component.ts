@@ -44,6 +44,7 @@ export class ApplicationsComponent {
       .subscribe(data => {
         this.jobApps = data;
         this.applicationService.boardDetails = data;
+        console.log(data)
       })
   }
 

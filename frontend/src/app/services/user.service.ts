@@ -10,7 +10,7 @@ import { Login, LoginResponse } from '../Interfaces/login.interface';
 export class UserService {
 
   //userUrl = 'https://job-hunter-api-acjc.onrender.com/user';  
-  userUrl = 'https://backend-jobhunter.vercel.app/user';  
+  userUrl = 'https://mean-stack-jobhunter.vercel.app/user';  
   constructor(private httpClient: HttpClient) { }
 
   createUser(formValues: Registration): Observable<Registration> {

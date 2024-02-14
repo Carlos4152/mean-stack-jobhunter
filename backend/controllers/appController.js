@@ -48,7 +48,7 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
     const { appId } = req.params;
 
-    const application = await App.findById(appId);
+    const application = await App.findById({ _id: appId});
     res.json(application)
 }
 

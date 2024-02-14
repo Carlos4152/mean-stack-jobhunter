@@ -8,7 +8,7 @@ import { Application } from '../Interfaces/applications.interface';
 })
 export class ApplicationService {
 
-  userUrl = 'https://job-hunter-api-acjc.onrender.com/user/';
+  userUrl = 'https://mean-stack-jobhunter.vercel.app/user/';
   boardDetails: Application[] = [];
 
   constructor(private httpClient: HttpClient) { }
