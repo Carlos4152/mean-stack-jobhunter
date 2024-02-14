@@ -5,14 +5,17 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, finalize } from 'rxjs';
+import { LoadingService } from './services/loading.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private loadingService: LoadingService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+
+    this.loadingService.showLoading();
 
     const token = localStorage.getItem("token");
     let requestCloned = request
@@ -24,6 +27,10 @@ export class TokenInterceptor implements HttpInterceptor {
       });
     }
 
-    return next.handle(requestCloned);
+    return next.handle(requestCloned).pipe(
+      finalize(() => {
+        this.loadingService.hideLoading()
+      })
+    );
   }
 }

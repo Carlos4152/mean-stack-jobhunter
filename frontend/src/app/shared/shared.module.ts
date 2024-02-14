@@ -5,18 +5,21 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 
 import { EllipsisPipe } from './ellipsis.pipe';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
   declarations: [
-    EllipsisPipe
+    EllipsisPipe,
+    LoadingComponent
   ],
   exports: [
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule, 
     EllipsisPipe,
-    FormsModule
+    FormsModule,
+    LoadingComponent,
   ]
 })
 export class SharedModule { }

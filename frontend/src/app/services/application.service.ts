@@ -8,17 +8,17 @@ import { Application } from '../Interfaces/applications.interface';
 })
 export class ApplicationService {
 
-  userUrl = 'https://mean-stack-jobhunter.vercel.app/user/';
+  userUrl = 'https://mean-stack-jobhunter.vercel.app/user';
   boardDetails: Application[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<Application[]> {
-    return this.httpClient.get<Application[]>(`${this.userUrl}applications`)
+    return this.httpClient.get<Application[]>(`${this.userUrl}/applications`)
   }
 
   create(formValues: Application): Observable<Application>{
-    return this.httpClient.post<Application>(`${this.userUrl}application`, formValues);
+    return this.httpClient.post<Application>(`${this.userUrl}/application`, formValues);
   }
 
   getById(appId: string): Observable<Application> {

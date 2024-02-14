@@ -44,7 +44,6 @@ export class ApplicationsComponent {
       .subscribe(data => {
         this.jobApps = data;
         this.applicationService.boardDetails = data;
-        console.log(data)
       })
   }
 
@@ -95,6 +94,19 @@ export class ApplicationsComponent {
 
   //SEARCH APPLICATION METHOD
   searchApplication(searchValue: string) {
+    const searchTerm = searchValue.toLowerCase().trim();
+
+    if (!searchTerm) {
+      this.getData();
+      return;
+    }
+
+    this.jobApps = this.applicationService.boardDetails.filter(app =>
+      app.company.toLowerCase().includes(searchTerm) ||
+      app.position.toLowerCase().includes(searchTerm) ||
+      app.city.toLowerCase().includes(searchTerm)
+    );
+
   }
 
 }
